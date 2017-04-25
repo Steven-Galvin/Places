@@ -14,4 +14,12 @@ describe(Place) do
       expect(Place.all()).to(eq([]))
     end
   end
+
+  describe("#save") do
+    it("adds a new place to the class list of places.") do
+      test_place = Place.new("Alaska")
+      test_place.save()
+      expect(Place.all()).to(eq([test_place]))
+    end
+  end
 end
